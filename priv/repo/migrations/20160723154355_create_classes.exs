@@ -7,7 +7,7 @@ defmodule EctoDemo.Repo.Migrations.CreateClasses do
       add :address, :string, null: false
       add :attendees, :integer, null: false, default: 0
 
-      add :course_id, references(:courses)
+      add :course_id, references(:courses), null: false
 
       timestamps
     end

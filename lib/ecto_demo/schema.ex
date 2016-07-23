@@ -27,7 +27,7 @@ defmodule EctoDemo.Class do
   schema "classes" do
     field :name
     field :address
-    field :attendees
+    field :attendees, :integer, default: 0
 
     belongs_to :course, EctoDemo.Course
     has_many :enrollments, EctoDemo.Enrollment

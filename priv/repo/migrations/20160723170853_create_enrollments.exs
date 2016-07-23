@@ -5,8 +5,8 @@ defmodule EctoDemo.Repo.Migrations.CreateEnrollments do
     create table(:enrollments) do
       add :status, :string, null: false
 
-      add :class_id, references(:classes)
-      add :user_id, references(:users)
+      add :class_id, references(:classes), null: false
+      add :user_id, references(:users), null: false
 
       timestamps
     end

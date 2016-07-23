@@ -8,7 +8,5 @@ defmodule EctoDemo.Repo.Migrations.CreateCourses do
 
       timestamps
     end
-
-
   end
 end
