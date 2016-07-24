@@ -12,8 +12,8 @@ $ iex -S mix
 
 Inside IEx, run:
 ```sh
-$ EctoDemo.completed_enrollments()
+iex(1)> EctoDemo.completed_enrollments()
 ```
 ```sh
-$ EctoDemo.course_classes()
+iex(1)> EctoDemo.course_classes()
 ```
