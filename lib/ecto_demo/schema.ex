@@ -1,6 +1,7 @@
 defmodule EctoDemo.User do
   use Ecto.Schema
-
+  import Ecto.Changeset
+  
   schema "users" do
     field :name
     field :email
