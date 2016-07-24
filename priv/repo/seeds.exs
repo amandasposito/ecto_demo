@@ -16,7 +16,7 @@ defmodule Seeds do
     EctoDemo.Repo.start_link()
 
     EctoDemo.Repo.transaction fn ->
-      user = EctoDemo.Repo.insert!(%EctoDemo.User{name: "Jane Doe"})
+      user = EctoDemo.Repo.insert!(%EctoDemo.User{name: "Jane Doe", age: 27, email: "jane.doe@gmail.com"})
 
       course = EctoDemo.Repo.insert!(%EctoDemo.Course{name: "Meet Elixir", description: "Write concurrent programs with the Elixir language."})
 

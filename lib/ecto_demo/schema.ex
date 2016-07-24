@@ -3,8 +3,19 @@ defmodule EctoDemo.User do
 
   schema "users" do
     field :name
+    field :email
+    field :age, :integer
 
     timestamps
+  end
+
+  def changeset(user, params \\ %{}) do
+    user
+    |> cast(params, [:name, :email, :age])
+    |> validate_required([:name, :email])
+    |> validate_format(:email, ~r/@/)
+    |> validate_inclusion(:age, 18..100)
+    |> unique_constraint(:email)
   end
 end
 
@@ -15,7 +26,7 @@ defmodule EctoDemo.Course do
     field :name
     field :description
 
-    has_many :classes, EctoDemo.Class
+    has_many :classes, EctoDemo.Class, on_delete: :delete_all
 
     timestamps
   end
@@ -30,7 +41,7 @@ defmodule EctoDemo.Class do
     field :attendees, :integer, default: 0
 
     belongs_to :course, EctoDemo.Course
-    has_many :enrollments, EctoDemo.Enrollment
+    has_many :enrollments, EctoDemo.Enrollment, on_delete: :delete_all
 
     timestamps
   end
