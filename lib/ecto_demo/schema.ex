@@ -1,13 +1,13 @@
 defmodule EctoDemo.User do
   use Ecto.Schema
   import Ecto.Changeset
-  
+
   schema "users" do
     field :name
     field :email
     field :age, :integer
 
-    timestamps
+    timestamps()
   end
 
   def changeset(user, params \\ %{}) do
@@ -29,7 +29,7 @@ defmodule EctoDemo.Course do
 
     has_many :classes, EctoDemo.Class, on_delete: :delete_all
 
-    timestamps
+    timestamps()
   end
 end
 
@@ -44,7 +44,7 @@ defmodule EctoDemo.Class do
     belongs_to :course, EctoDemo.Course
     has_many :enrollments, EctoDemo.Enrollment, on_delete: :delete_all
 
-    timestamps
+    timestamps()
   end
 end
 
@@ -57,6 +57,6 @@ defmodule EctoDemo.Enrollment do
     belongs_to :class, EctoDemo.Class
     belongs_to :user, EctoDemo.User
 
-    timestamps
+    timestamps()
   end
 end
