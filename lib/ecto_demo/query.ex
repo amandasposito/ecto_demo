@@ -25,6 +25,16 @@ defmodule EctoDemo do
     EctoDemo.Repo.all(query)
   end
 
+  def course_classes_without_preload() do
+    EctoDemo.Repo.start_link()
+
+    query = (from c in EctoDemo.Course,
+             join: class in assoc(c, :classes),
+             select: c)
+
+    EctoDemo.Repo.all(query)
+  end
+
   def update_user_name() do
     EctoDemo.Repo.start_link()
 

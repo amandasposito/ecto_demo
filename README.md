@@ -17,3 +17,18 @@ iex(1)> EctoDemo.completed_enrollments()
 ```sh
 iex(1)> EctoDemo.course_classes()
 ```
+```sh
+iex(1)> EctoDemo.course_classes_without_preload()
+```
+```sh
+iex(1)> EctoDemo.update_user_name()
+```
+```sh
+iex(1)> EctoDemo.insert_multiple_users()
+```
+```sh
+iex(1)> EctoDemo.schemalless_changset()
+```
+```sh
+iex(1)> EctoDemo.with_minimum()
+```
